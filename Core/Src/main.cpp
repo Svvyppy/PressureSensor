@@ -123,6 +123,9 @@ int main(void)
 
 extern "C"
 {
+
+    void USART3_IRQHandler(void) { uart3.IRQCallback(); }
+    void USART1_IRQHandler(void) { uart1.IRQCallback(); }
     /**
      * @brief System Clock Configuration
      * @retval None

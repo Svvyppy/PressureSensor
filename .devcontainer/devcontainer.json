@@ -3,7 +3,7 @@
 {
     "name": "HydroOS",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "seajackal/hydrodrivers:latest",
+    //"image": "seajackal/hydrodrivers:latest",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {}
     },
@@ -11,14 +11,14 @@
     "mounts": [
         "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
     ],
-    // "build": {
-    //     "dockerfile": "Dockerfile",
-    //     "args": {
-    //         "USERNAME": "hydrolib",
-    //         "GID": "${localEnv:UID}",
-    //         "UID": "${localEnv:UID}"
-    //     }
-    // },
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "hydrolib",
+            "GID": "${localEnv:UID}",
+            "UID": "${localEnv:UID}"
+        }
+    },
     "runArgs": [
         "--privileged",
         "--security-opt",
