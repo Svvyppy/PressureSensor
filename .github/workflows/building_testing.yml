@@ -1,0 +1,20 @@
+name: Building and testing library
+run-name: Building and testing library
+on: [push]
+jobs:
+  Build-F1:
+    runs-on: ubuntu-latest
+    container:
+      image: seajackal/hydrodrivers:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake --preset DebugF1
+      - run: cmake --build ./build
+  Build-F4:
+    runs-on: ubuntu-latest
+    container:
+      image: seajackal/hydrodrivers:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake --preset DebugF4
+      - run: cmake --build ./build
