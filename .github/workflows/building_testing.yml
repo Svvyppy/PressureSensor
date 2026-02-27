@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build-F4:
+  Build-F1:
     runs-on: ubuntu-latest
     container:
       image: seajackal/hydrodrivers:latest
@@ -22,7 +22,7 @@ jobs:
         run: git submodule update --init --recursive
       
       - name: Configure CMake
-        run: cmake --preset DebugF4
+        run: cmake --preset DebugF1
       
       - name: Build
         run: cmake --build ./build
@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: firmware-f4
+          name: firmware-f1
           path: |
             ${{ steps.find_files.outputs.bin }}
             ${{ steps.find_files.outputs.elf }}
