@@ -18,8 +18,10 @@ add_library(${LIBRARY_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/Src/stm32f1xx_hal_tim.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Src/stm32f1xx_hal.c
     ${CMAKE_CURRENT_SOURCE_DIR}/Src/stm32f1xx_hal_uart.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/Src/stm32f1xx_hal_uart.c
+    
 )
 
 target_include_directories(${LIBRARY_NAME}  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Inc)
+target_include_directories(${LIBRARY_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Inc)
 target_link_libraries(${LIBRARY_NAME} INTERFACE CMSIS)
-target_link_libraries(${LIBRARY_NAME} PUBLIC Periph)
