@@ -57,10 +57,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Pressure_Pin GPIO_PIN_0
-#define Pressure_GPIO_Port GPIOA
-#define Temp_Pin GPIO_PIN_2
-#define Temp_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
